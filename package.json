@@ -1,0 +1,9 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "tailwindcss": "tailwindcss.exe -i ./public/src/input.css -o ./public/css/style.css --watch"
+  }
+}

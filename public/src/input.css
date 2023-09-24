@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  body {
+    @apply font-opens;
+  }
+
+  /* input */
+
+  .form-page {
+    @apply flex flex-col gap-6 max-w-screen-sm rounded-sm text-dark-secondary text-sm font-semibold bg-dark-primary w-11/12 md:w-[600px] mx-auto px-4 py-12;
+  }
+
+  .input-form {
+    @apply w-full text-sm rounded-sm bg-white text-black px-4 py-2 placeholder:text-light-grey;
+  }
+
+  /* button component */
+
+  .primary-btn-lg {
+    @apply bg-accent text-white text-base md:text-lg lg:text-xl rounded-md px-4 py-2 lg:px-6 lg:py-4;
+  }
+
+  .primary-btn {
+    @apply bg-accent text-white text-sm  lg:text-base rounded-md px-2 py-1 lg:px-4 lg:py-2;
+  }
+
+  .secondary-btn {
+    @apply bg-secondary text-black text-sm  lg:text-base rounded-md px-2 py-1 lg:px-4 lg:py-2;
+  }
+
+  .main-title {
+    @apply h-max flex gap-4 items-center text-4xl text-secondary font-bold;
+  }
+
+  /* todos */
+
+  .todo {
+    @apply relative max-h-[14rem] bg-dark-primary rounded-md text-white font-roboto px-6 py-4 hover:shadow-accent hover:shadow-md transition-shadow duration-300;
+  }
+
+  .todo-title {
+    @apply text-lg md:text-2xl truncate font-semibold;
+  }
+
+  .todo-body {
+    @apply text-sm mt-4 text-ellipsis overflow-hidden;
+  }
+
+  .todo-select {
+    @apply absolute -top-1 -right-1 accent-accent;
+  }
+}
