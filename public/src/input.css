@@ -52,4 +52,16 @@
   .todo-select {
     @apply absolute -top-1 -right-1 accent-accent;
   }
+
+  .alert-bg {
+    @apply fixed top-0 left-0 right-0 bottom-0 bg-background-transparent transition-all duration-300 scale-0 origin-top;
+  }
+
+  .alert {
+    @apply absolute top-16 left-[50%] translate-x-[-50%]    py-3 px-4 w-80 md:w-96 m-auto bg-dark-primary rounded-md z-20 shadow-accent shadow-md;
+  }
+
+  .alert-title {
+    @apply text-lg font-semibold text-white py-6 text-center;
+  }
 }

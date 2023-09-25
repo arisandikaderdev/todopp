@@ -4,7 +4,7 @@
 
 <?= $this->section('head'); ?>
 
-<?= view_cell('HeaderCell', ['title' => 'Dashboard | todo app']); ?>
+<?= view_cell('HeaderCell', ['title' => 'Trash | todo app']); ?>
 
 <?= $this->endSection(); ?>
 
@@ -14,8 +14,8 @@
 <?= $this->section('header'); ?>
 
 <h1 class="main-title">
-    My Todo
-    <img src="<?= base_url('asset/todo.svg'); ?>" alt="todo" class="w-8">
+    Trash
+    <img src="<?= base_url('asset/trash.svg'); ?>" alt="trash" class="w-8">
 </h1>
 
 
@@ -28,6 +28,9 @@
 <div method="post" action="<?= base_url('delete'); ?>" class="relative">
     <!-- option -->
     <div class="flex gap-3 justify-end">
+        <button>
+            <img id="restore" src="<?= base_url('asset/restore.svg'); ?>" alt="restore" class="w-6 hidden">
+        </button>
         <button form="selectForm" type="submit">
             <img id="trash" src="<?= base_url('asset/trash.svg'); ?>" alt="trash" class="w-6 hidden">
         </button>
@@ -179,31 +182,12 @@
 
     </div>
 
-    <!-- add todo ++  -->
 
-    <button id="trigger-addtodo" class="bg-accent rounded-full fixed bottom-12 right-8 px-3 py-3">
-        <img src="<?= base_url('asset/plus.svg'); ?>" alt="pluc" class="w-10 md:w-12">
-    </button>
-
-    <!-- add todo form -->
-
-    <div id="addtodo" class="h-0 overflow-hidden fixed top-0 left-0 right-0 bottom-0 bg-background-transparent transition-all duration-300 ease-in-out">
-        <div class="relative flex flex-col gap-4 mt-14  bg-dark-primary  m-auto w-11/12 max-w-screen-sm  px-4 py-8">
-
-            <button id="close-addtodo" class="absolute -top-3 -right-3 p-1 rounded-full bg-accent">
-                <img src="<?= base_url('asset/x.svg'); ?>" alt="close add" class="w-5">
-            </button>
-
-            <input type="text" form="addForm" name="title" placeholder="Title ..." class="input-form">
-            <textarea name="todo" class="input-form h-48"></textarea>
-            <button form="addForm" type="submit" class="primary-btn">Save</button>
-        </div>
-    </div>
 
     <!-- alert delete -->
-    <div id="alert-delete" class="hidden fixed top-0 left-0 right-0 bottom-0 bg-background-transparent transition-all duration-300 scale-0 origin-top">
-        <div class=" absolute top-16 left-[50%] translate-x-[-50%]    py-3 px-4 w-80 md:w-96 m-auto bg-dark-primary rounded-md z-20 shadow-accent shadow-md ">
-            <p class="text-lg font-semibold text-white py-6 text-center">Are you sure deleted selected todo ?</p>
+    <div id="alert-delete" class="hidden alert-bg">
+        <div class=" alert ">
+            <p class="alert-title">Permanent delete todo ?</p>
             <div class="flex items-center justify-evenly">
                 <button id="trash-no" class="secondary-btn">No</button>
                 <button form="selectForm" type="submit" id="trash-yes" class="primary-btn">Yes</button>
@@ -211,9 +195,23 @@
         </div>
     </div>
 
+    <!-- alert restore -->
+
+    <div id="alert-restore" class="hidden alert-bg">
+        <div class="alert ">
+            <p class="alert-title">Restore selected Todo ? </p>
+
+            <div class="flex gap-4 justify-evenly mt-4">
+                <button id="restore-no" class="secondary-btn">No</button>
+                <button class="primary-btn">Yes</button>
+            </div>
+        </div>
+    </div>
+
     <!-- forms -->
-    <form action="<?= base_url('delete'); ?>" method="post" id="selectForm"></form>
-    <form action="<?= base_url('addtodo'); ?>" method="post" id="addForm"></form>
+    <form action="<?= base_url('permanentdelete'); ?>" method="post" id="selectForm"></form>
+    <form action="<?= base_url('restore');  ?>" method="post" id="restoreForm"></form>
+
 </div>
 
 
@@ -230,11 +228,12 @@
     const alertDelete = document.querySelector('#alert-delete');
     const trashNo = document.querySelector('#trash-no');
 
-    // add varibale
 
-    const addtodo = document.querySelector('#addtodo');
-    const triggerAddTodo = document.querySelector('#trigger-addtodo');
-    const closeAddtodo = document.querySelector('#close-addtodo');
+    // restore todo
+
+    const triggerRestore = document.querySelector('#restore');
+    const alertRestore = document.querySelector('#alert-restore');
+    const restoreNo = document.querySelector('#restore-no');
 
 
 
@@ -253,16 +252,17 @@
                 todo.checked = true;
                 todo.classList.remove("hidden");
                 trash.classList.remove("hidden");
-
+                restore ? restore.classList.remove("hidden") : "";
             } else {
                 todo.checked = false;
                 todo.classList.add("hidden");
                 trash.classList.add("hidden");
-
+                restore ? restore.classList.add("hidden") : "";
             }
         }
     });
 
+    // todo each selec
     for (const todoCheck of todosCheck) {
         todoCheck.addEventListener("click", () => {
             countChecked = 0;
@@ -275,25 +275,23 @@
                 parentCheck.checked = false;
                 parentCheck.indeterminate = false;
                 trash.classList.add("hidden");
-
+                restore ? restore.classList.add("hidden") : "";
             } else if (countChecked == todosCheck.length) {
                 parentCheck.checked = true;
                 parentCheck.indeterminate = false;
                 trash.classList.remove("hidden");
-
+                restore ? restore.classList.remove("hidden") : "";
             } else {
                 parentCheck.checked = false;
                 parentCheck.indeterminate = true;
                 trash.classList.remove("hidden");
-
+                restore ? restore.classList.remove("hidden") : "";
             }
         });
     }
 
 
-
-
-    // delete
+    // delete todo logic
 
     trash.addEventListener('click', e => {
         e.preventDefault();
@@ -307,14 +305,18 @@
         alertDelete.style.transform = 'scale(0)';
     })
 
-    // add todo
 
-    triggerAddTodo.addEventListener('click', () => {
-        addtodo.style.height = '100vh';
-    })
+    // restore todo logic
 
-    closeAddtodo.addEventListener('click', () => {
-        addtodo.style.height = '0';
+    triggerRestore.addEventListener('click', e => {
+        e.preventDefault();
+        console.log('df');
+        alertRestore.classList.remove('hidden');
+        alertRestore.style.transform = 'scale(1)'
+    });
+
+    restoreNo.addEventListener('click', () => {
+        alertRestore.style.transform = 'scale(0)';
     })
 </script>
 
