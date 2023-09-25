@@ -717,11 +717,18 @@ body {
   height: max-content;
   align-items: center;
   gap: 1rem;
-  font-size: 2.25rem;
-  line-height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(252 252 17 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .main-title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
 }
 
 /* todos */
@@ -919,6 +926,10 @@ body {
   z-index: 50;
 }
 
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
+
 .col-start-1 {
   grid-column-start: 1;
 }
@@ -969,6 +980,10 @@ body {
   margin-top: 1.5rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .block {
   display: block;
 }
@@ -1005,6 +1020,10 @@ body {
   height: 3.5rem;
 }
 
+.h-24 {
+  height: 6rem;
+}
+
 .h-28 {
   height: 7rem;
 }
@@ -1026,8 +1045,20 @@ body {
   height: 100vh;
 }
 
+.h-36 {
+  height: 9rem;
+}
+
+.h-44 {
+  height: 11rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
+}
+
+.min-h-\[70vh\] {
+  min-height: 70vh;
 }
 
 .w-0 {
@@ -1087,6 +1118,18 @@ body {
   max-width: 640px;
 }
 
+.max-w-sm {
+  max-width: 24rem;
+}
+
+.max-w-md {
+  max-width: 28rem;
+}
+
+.max-w-screen-md {
+  max-width: 768px;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -1122,6 +1165,10 @@ body {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .grid-rows-\[max-content\2c 1fr\] {
@@ -1170,6 +1217,14 @@ body {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.self-center {
+  align-self: center;
 }
 
 .overflow-hidden {
@@ -1284,6 +1339,11 @@ body {
   padding-bottom: 0.75rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -1306,8 +1366,16 @@ body {
   text-align: center;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .font-opens {
   font-family: open sans, sans-serif;
+}
+
+.font-roboto {
+  font-family: roboto, sans-serif;
 }
 
 .text-2xl {
@@ -1340,6 +1408,11 @@ body {
   line-height: 1rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .font-semibold {
   font-weight: 600;
 }
@@ -1348,8 +1421,16 @@ body {
   font-weight: 100;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
 .italic {
   font-style: italic;
+}
+
+.leading-6 {
+  line-height: 1.5rem;
 }
 
 .text-dark-secondary {
@@ -1430,6 +1511,10 @@ body {
 }
 
 @media (min-width: 768px) {
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
   .md\:col-start-2 {
     grid-column-start: 2;
   }
@@ -1456,6 +1541,14 @@ body {
 
   .md\:grid-cols-\[\.2fr\2c 1fr\] {
     grid-template-columns: .2fr 1fr;
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:gap-6 {
+    gap: 1.5rem;
   }
 
   .md\:text-2xl {

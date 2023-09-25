@@ -25,7 +25,7 @@
 <!-- main -->
 
 <?= $this->section('main'); ?>
-<div method="post" action="<?= base_url('delete'); ?>" class="relative">
+<div class="relative">
     <!-- option -->
     <div class="flex gap-3 justify-end">
         <button form="selectForm" type="submit">

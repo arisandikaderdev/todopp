@@ -32,7 +32,7 @@
   }
 
   .main-title {
-    @apply h-max flex gap-4 items-center text-4xl text-secondary font-bold;
+    @apply h-max flex gap-4 items-center text-2xl md:text-4xl text-secondary font-bold;
   }
 
   /* todos */
