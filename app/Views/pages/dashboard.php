@@ -188,7 +188,7 @@
     <!-- add todo form -->
 
     <div id="addtodo" class="h-0 overflow-hidden fixed top-0 left-0 right-0 bottom-0 bg-background-transparent transition-all duration-300 ease-in-out">
-        <div class="relative flex flex-col gap-4 mt-14  bg-dark-primary  m-auto w-11/12 max-w-screen-sm  px-4 py-8">
+        <div class="relative flex flex-col gap-4 mt-14  bg-dark-primary dark:bg-black  m-auto w-11/12 max-w-screen-sm  px-4 py-8">
 
             <button id="close-addtodo" class="absolute -top-3 -right-3 p-1 rounded-full bg-accent">
                 <img src="<?= base_url('asset/x.svg'); ?>" alt="close add" class="w-5">
@@ -202,7 +202,7 @@
 
     <!-- alert delete -->
     <div id="alert-delete" class="hidden fixed top-0 left-0 right-0 bottom-0 bg-background-transparent transition-all duration-300 scale-0 origin-top">
-        <div class=" absolute top-16 left-[50%] translate-x-[-50%]    py-3 px-4 w-80 md:w-96 m-auto bg-dark-primary rounded-md z-20 shadow-accent shadow-md ">
+        <div class=" absolute top-16 left-[50%] translate-x-[-50%]    py-3 px-4 w-80 md:w-96 m-auto bg-dark-primary dark:bg-black rounded-md z-20 shadow-accent shadow-md ">
             <p class="text-lg font-semibold text-white py-6 text-center">Are you sure deleted selected todo ?</p>
             <div class="flex items-center justify-evenly">
                 <button id="trash-no" class="secondary-btn">No</button>

@@ -31,7 +31,7 @@
         </button>
     </div>
     <!-- todo -->
-    <div class="bg-dark-primary rounded-md font-roboto text-white py-6 px-4 my-4  ">
+    <div class="bg-dark-primary dark:bg-black rounded-md font-roboto text-white py-6 px-4 my-4  ">
         <p class="text-xl md:text-2xl font-semibold py-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum laboriosam deleniti ea! Id corporis consectetur</p>
         <p class="leading-6 text-justify">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. At ab voluptatem cumque illum mollitia distinctio quos accusamus nesciunt, ad autem nostrum tempora dolore, quibusdam molestiae neque expedita minus a saepe iste impedit, debitis sunt laudantium! Maxime nostrum at repellendus sapiente velit eius autem commodi, est nulla aliquid odio corrupti in? Adipisci fuga reprehenderit nisi odio? Eos facere illum, quam reprehenderit, necessitatibus magni provident fugit culpa ea nesciunt vitae. Illum quae quos natus libero velit aspernatur blanditiis repellendus harum, fuga aliquid eaque laborum qui quis soluta. Deserunt error autem, at cupiditate facere non nemo quisquam provident inventore nisi quam quasi dolorum.
@@ -40,7 +40,7 @@
 
     <!-- alert edit -->
     <div id="alert-edit" class="alert-bg hidden ">
-        <div class=" bg-dark-primary rounded-sm max-w-screen-sm w-11/12 m-auto mt-8 px-4 py-6 relative">
+        <div class=" bg-dark-primary dark:bg-black rounded-sm max-w-screen-sm w-11/12 m-auto mt-8 px-4 py-6 relative">
             <!-- form edit -->
             <form action="" method="post" class="flex flex-col gap-4">
                 <input type="text" name="todo-title" class="input-form" placeholder="title">

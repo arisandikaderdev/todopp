@@ -13,6 +13,8 @@ module.exports = {
       black: "#000",
       "light-grey": "#BDBDBD",
       "background-transparent": "rgba(0,0,0,0.66)",
+      "blue-sky": "#31CFF6",
+      "grey-dark": "#333333",
     },
 
     extend: {
@@ -20,7 +22,19 @@ module.exports = {
         roboto: ["roboto", "sans-serif"],
         opens: ["open sans", "sans-serif"],
       },
+      animation: {
+        toggleTheme: "toggleTheme 2s ease-in-out infinite",
+      },
+      keyframes: {
+        toggleTheme: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": {
+            transform: "rotate(360deg) translateY(4rem)",
+          },
+        },
+      },
     },
   },
+  darkMode: "class",
   plugins: [],
 };

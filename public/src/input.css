@@ -10,7 +10,7 @@
   /* input */
 
   .form-page {
-    @apply flex flex-col gap-6 max-w-screen-sm rounded-sm text-dark-secondary text-sm font-semibold bg-dark-primary w-11/12 md:w-[600px] mx-auto px-4 py-12;
+    @apply flex flex-col gap-6 max-w-screen-sm rounded-sm text-dark-secondary text-sm font-semibold bg-dark-primary dark:bg-black w-11/12 md:w-[600px] mx-auto px-4 py-12;
   }
 
   .input-form {
@@ -38,7 +38,7 @@
   /* todos */
 
   .todo {
-    @apply relative max-h-[14rem] bg-dark-primary rounded-md text-white font-roboto px-6 py-4 hover:shadow-accent hover:shadow-md transition-shadow duration-300;
+    @apply relative max-h-[14rem] bg-dark-primary dark:bg-black rounded-md text-white font-roboto px-6 py-4 hover:shadow-accent hover:shadow-md transition-shadow duration-300;
   }
 
   .todo-title {
@@ -58,7 +58,7 @@
   }
 
   .alert {
-    @apply absolute top-16 left-[50%] translate-x-[-50%]    py-3 px-4 w-80 md:w-96 m-auto bg-dark-primary rounded-md z-20 shadow-accent shadow-md;
+    @apply absolute top-16 left-[50%] translate-x-[-50%]    py-3 px-4 w-80 md:w-96 m-auto bg-dark-primary dark:bg-black rounded-md z-20 shadow-accent shadow-md;
   }
 
   .alert-title {

@@ -28,7 +28,7 @@ use Faker\Provider\Base;
 <!-- main -->
 <?= $this->section('main'); ?>
 
-<form action="" class="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2 justify-center   bg-dark-primary px-4 py-8">
+<form action="" class="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2 justify-center   bg-dark-primary dark:bg-black px-4 py-8">
     <input type="text" placeholder="Name" class="input-form  h-10 ">
     <input type="email" placeholder="Email" class="input-form h-10">
     <textarea name="message" class="input-form h-44 md:col-span-2">
