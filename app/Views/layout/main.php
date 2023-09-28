@@ -11,15 +11,15 @@
             <?= view_cell('SwitchThemeCell'); ?>
             <!-- account section -->
             <div class="relative h-max ">
-                <img id="profile-pic" src="<?= base_url('asset/bg.png'); ?>" alt="avatar pic" class="w-10 h-10 aspect-square rounded-full object-cover bg-black">
+                <img id="profile-pic" src="<?= esc($user['profile_pic']); ?>" alt="avatar pic" class="w-10 h-10 aspect-square rounded-full object-cover bg-black">
                 <div id="overlay" class="h-0 overflow-hidden absolute bg-primary top-[120%] right-0 transition-all duration-300 z-50">
                     <div class=" bg-dark-primary dark:bg-black rounded-lg w-56 px-4 py-6 shadow-md shadow-accent ">
                         <div class="flex flex-col gap-4 items-center ">
-                            <img src="<?= base_url('asset/bg.png'); ?>" alt="avatar pic" class="w-14 h-14 aspect-square rounded-full object-cover bg-black">
+                            <img src="<?= esc($user['profile_pic']); ?>" alt="avatar pic" class="w-14 h-14 aspect-square rounded-full object-cover bg-black">
 
                             <div class="text-center  ">
-                                <p class="text-lg text-secondary font-semibold">Username</p>
-                                <small class="text-secondary font-thin italic">Email.com</small>
+                                <p class="text-lg text-secondary font-semibold"><?= esc($user['username']); ?></p>
+                                <small class="text-secondary font-thin italic"><?= esc($user['email']); ?></small>
                             </div>
 
                             <button class="primary-btn">

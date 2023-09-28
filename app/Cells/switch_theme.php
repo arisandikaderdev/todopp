@@ -1,6 +1,6 @@
 <div class="bg-dark-primary h-max w-16 rounded-full">
     <div data-mode='light' id="mode-bg" class="w-max p-1 rounded-full bg-blue-sky cursor-pointer transition-all duration-700 ease-in-out">
-        <img id="mode-img" src="<?= base_url('asset/sun.svg'); ?>" alt="sun/moon" class="w-4  transition-all duration-700">
+        <img id="mode-img" src="/asset/sun.png" alt="sun/moon" class="w-4  transition-all duration-700">
     </div>
 </div>
 
@@ -49,7 +49,7 @@
 
     function darkMode() {
         modeBg.style.background = "black";
-        modeImg.src = "./asset/moon.svg";
+        modeImg.src = "/asset/moon.svg";
 
         modeImg.style.transform = "rotate(360deg)";
         modeBg.style.transform = "translateX(2.5rem)";
@@ -60,7 +60,7 @@
 
     function lightMode() {
         modeBg.style.background = "#31CFF6";
-        modeImg.src = "./asset/sun.svg";
+        modeImg.src = "/asset/sun.svg";
 
         modeImg.style.transform = "rotate(0deg)";
         modeBg.style.transform = "translateX(0)";

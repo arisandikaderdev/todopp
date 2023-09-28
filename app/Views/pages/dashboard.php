@@ -43,12 +43,12 @@
 
 
     <!-- empty todo -->
-    <!-- <div class="h-[80vh] flex justify-center items-center">
+    <div class="h-[80vh] flex justify-center items-center">
         <p class="text-base md:text-lg text-secondary font-semibold">You dont have todo !</p>
-    </div> -->
+    </div>
 
     <!-- todo -->
-    <div class=" grid grid-cols-2  justify-evenly  gap-4 my-4">
+    <!-- <div class=" grid grid-cols-2  justify-evenly  gap-4 my-4">
 
         <div class="todo ">
             <a href="">
@@ -177,7 +177,7 @@
             <input type="checkbox" name="todo" class="todo-select hidden">
         </div>
 
-    </div>
+    </div> -->
 
     <!-- add todo ++  -->
 
@@ -195,7 +195,7 @@
             </button>
 
             <input type="text" form="addForm" name="title" placeholder="Title ..." class="input-form">
-            <textarea name="todo" class="input-form h-48"></textarea>
+            <textarea name="todo" form="addForm" class="input-form h-48"></textarea>
             <button form="addForm" type="submit" class="primary-btn">Save</button>
         </div>
     </div>
@@ -213,7 +213,7 @@
 
     <!-- forms -->
     <form action="<?= base_url('delete'); ?>" method="post" id="selectForm"></form>
-    <form action="<?= base_url('addtodo'); ?>" method="post" id="addForm"></form>
+    <form action="<?= current_url(); ?>" method="post" id="addForm"></form>
 </div>
 
 

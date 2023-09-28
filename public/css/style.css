@@ -861,6 +861,45 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.error-message {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+  width: 91.666667%;
+  max-width: 640px;
+  border-radius: 0.125rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(221 0 0 / var(--tw-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px) {
+  .error-message {
+    width: 600px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.collapse {
+  visibility: collapse;
+}
+
 .static {
   position: static;
 }
@@ -977,6 +1016,10 @@ body {
 
 .mb-6 {
   margin-bottom: 1.5rem;
+}
+
+.mr-auto {
+  margin-right: auto;
 }
 
 .mt-14 {
@@ -1258,6 +1301,11 @@ body {
   border-width: 1px;
 }
 
+.bg-\[rgb\(221\2c 0\2c 0\)\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(221 0 0 / var(--tw-bg-opacity));
+}
+
 .bg-accent {
   --tw-bg-opacity: 1;
   background-color: rgb(255 87 34 / var(--tw-bg-opacity));
@@ -1346,6 +1394,11 @@ body {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .py-6 {
@@ -1555,6 +1608,10 @@ body {
 
   .md\:w-96 {
     width: 24rem;
+  }
+
+  .md\:w-\[600px\] {
+    width: 600px;
   }
 
   .md\:grid-cols-2 {

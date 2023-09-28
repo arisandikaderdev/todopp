@@ -17,10 +17,12 @@ use function PHPUnit\Framework\containsOnly;
  */
 
 $routes->get('/', [Homepage::class, 'index']);
-$routes->match(['get', 'post'], 'login', [Login::class, 'index']);
+// $routes->match(['get', 'post'], 'login', [Login::class, 'index']);
 $routes->match(['get', 'post'], 'singup', [Singup::class, 'index']);
-$routes->get('dashboard', [Dashboard::class, 'index']);
-$routes->get('trash', [Trash::class, 'index']);
-$routes->get('todo', [Todo::class, 'index']);
-$routes->get('about', [About::class, 'index']);
-$routes->get("contact", [Contact::class, 'index']);
+
+
+$routes->get('dashboard', [Dashboard::class, 'index'], ['filter' => 'role:user']);
+$routes->get('trash', [Trash::class, 'index'], ['filter' => 'role:user']);
+$routes->get('todo', [Todo::class, 'index'], ['filter' => 'role:user']);
+$routes->get('about', [About::class, 'index'], ['filter' => 'role:user']);
+$routes->get("contact", [Contact::class, 'index'], ['filter' => 'role:user']);

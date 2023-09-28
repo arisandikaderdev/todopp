@@ -4,7 +4,7 @@
     <h1 class="text-white font-semibold text-base md:text-2xl lg:text-6xl ">Do You <span class="text-secondary">Tash</span> Everything Everywhere</h1>
     <p class="text-secondary  text-xs lg:text-base">Write Todo Anywhare and Do You Task</p>
     <button class="primary-btn-lg mt-4">
-        <a href="<?= base_url('login'); ?>">Bring Me In</a>
+        <a href="<?= base_url('dashboard'); ?>">Bring Me In</a>
     </button>
 </main>
 
