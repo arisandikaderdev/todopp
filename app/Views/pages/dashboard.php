@@ -42,142 +42,32 @@
 
 
 
-    <!-- empty todo -->
-    <div class="h-[80vh] flex justify-center items-center">
-        <p class="text-base md:text-lg text-secondary font-semibold">You dont have todo !</p>
-    </div>
+    <?php if (!$todos) : ?>
+        <!-- empty todo -->
+        <div class="h-[80vh] flex justify-center items-center">
+            <p class="text-base md:text-lg text-secondary font-semibold">You dont have todo !</p>
+        </div>
+    <?php else : ?>
 
-    <!-- todo -->
-    <!-- <div class=" grid grid-cols-2  justify-evenly  gap-4 my-4">
+        <!-- todo -->
 
-        <div class="todo ">
-            <a href="">
-                <h3 class="todo-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                <p id='todo-body' class="todo-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur optio recusandae Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga perferendis deleniti, alias cum debitis nisi distinctio voluptatibus beatae quis incidunt. Eius quis sed dolorem ipsam omnis, non rerum quibusdam dolore. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, tempora sed, expedita nesciunt ut sequi, praesentium aut tempore pariatur veritatis id distinctio itaque nihil ad nisi nemo quae ea repellendus! </p>
-            </a>
+        <div class=" grid grid-cols-2  justify-evenly  gap-4 my-4">
+            <?php foreach ($todos as $todo) : ?>
+                <div class="todo ">
+                    <a href="">
+                        <h3 class="todo-title"><?= $todo['title']; ?></h3>
+                        <p id='todo-body' class="todo-body"><?= $todo['todo']; ?></p>
+                    </a>
 
-            <input type="checkbox" form="selectForm" name="todo" class="todo-select hidden">
+
+                    <input type="checkbox" form="selectForm" name="todo" class="todo-select hidden">
+
+                </div>
+            <?php endforeach; ?>
 
         </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                <p id='todo-body' class="todo-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur optio recusandae </p>
+    <?php endif; ?>
 
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                <p class="todo-body">
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-
-    </div> -->
 
     <!-- add todo ++  -->
 
@@ -187,16 +77,29 @@
 
     <!-- add todo form -->
 
-    <div id="addtodo" class="h-0 overflow-hidden fixed top-0 left-0 right-0 bottom-0 bg-background-transparent transition-all duration-300 ease-in-out">
+    <div id="addtodo" style="height: <?= !empty(session('errors')) ? '100vh' : '0px';  ?>;" class="h-0 overflow-hidden fixed top-0 left-0 right-0 bottom-0 bg-background-transparent transition-all duration-300 ease-in-out">
+
+        <!-- error message -->
+        <?php if (session('errors')) : ?>
+            <div class="error-message mt-4">
+                <?php foreach (session('errors') as $error) : ?>
+                    <p><?= $error; ?></p>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+
+        <!-- form -->
         <div class="relative flex flex-col gap-4 mt-14  bg-dark-primary dark:bg-black  m-auto w-11/12 max-w-screen-sm  px-4 py-8">
 
             <button id="close-addtodo" class="absolute -top-3 -right-3 p-1 rounded-full bg-accent">
                 <img src="<?= base_url('asset/x.svg'); ?>" alt="close add" class="w-5">
             </button>
+            <form action="<?= current_url(); ?>" method="post" id="addForm" class="flex flex-col gap-4">
+                <input type="text" name="title" placeholder="Title ..." class="input-form">
+                <textarea name="todo" class="input-form h-48"></textarea>
+                <button type="submit" class="primary-btn">Save</button>
+            </form>
 
-            <input type="text" form="addForm" name="title" placeholder="Title ..." class="input-form">
-            <textarea name="todo" form="addForm" class="input-form h-48"></textarea>
-            <button form="addForm" type="submit" class="primary-btn">Save</button>
         </div>
     </div>
 
@@ -213,7 +116,6 @@
 
     <!-- forms -->
     <form action="<?= base_url('delete'); ?>" method="post" id="selectForm"></form>
-    <form action="<?= current_url(); ?>" method="post" id="addForm"></form>
 </div>
 
 

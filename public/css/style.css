@@ -1301,11 +1301,6 @@ body {
   border-width: 1px;
 }
 
-.bg-\[rgb\(221\2c 0\2c 0\)\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(221 0 0 / var(--tw-bg-opacity));
-}
-
 .bg-accent {
   --tw-bg-opacity: 1;
   background-color: rgb(255 87 34 / var(--tw-bg-opacity));
@@ -1394,11 +1389,6 @@ body {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.py-5 {
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
 }
 
 .py-6 {
@@ -1608,10 +1598,6 @@ body {
 
   .md\:w-96 {
     width: 24rem;
-  }
-
-  .md\:w-\[600px\] {
-    width: 600px;
   }
 
   .md\:grid-cols-2 {
