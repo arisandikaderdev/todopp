@@ -4,7 +4,7 @@
 
 <?= $this->section('head'); ?>
 
-<?= view_cell('HeaderCell', ['title' => 'todo | todo app']); ?>
+<?= view_cell('HeaderCell', ['title' => 'todo trash | todo app']); ?>
 
 <?= $this->endSection(); ?>
 
@@ -12,8 +12,8 @@
 <?= $this->section('header'); ?>
 
 <h1 class="main-title">
-    My Todo
-    <img src="<?= base_url('asset/todo.svg'); ?>" alt="todo" class="w-8">
+    trash
+    <img src="<?= base_url('asset/trash.svg'); ?>" alt="todo" class="w-8">
 </h1>
 
 
@@ -26,8 +26,8 @@
         <button id="trigger-delete">
             <img src="<?= base_url('asset/trash.svg'); ?>" alt="trash" class="w-6">
         </button>
-        <button id="trigger-edit">
-            <img src="<?= base_url('asset/write.svg'); ?>" alt="edit" class="w-6">
+        <button id="trigger-restore">
+            <img src="<?= base_url('asset/restore.svg'); ?>" alt="restore" class="w-6">
         </button>
     </div>
     <!-- todo -->
@@ -38,48 +38,38 @@
         </p>
     </div>
 
-    <!-- alert edit -->
-    <div style="<?= !empty(session('errors')) ? 'transform: scale(1); display: block;' : ''; ?>" id="alert-edit" class="alert-bg hidden ">
-        <div class=" bg-dark-primary dark:bg-black rounded-sm max-w-screen-sm w-11/12 m-auto mt-8 px-4 py-6 relative">
 
-            <!-- error message -->
-            <?php if (session('errors')) : ?>
-                <div class="error-message mt-4">
-                    <?php foreach (session('errors') as $error) : ?>
-                        <p><?= $error; ?></p>
-                    <?php endforeach; ?>
-                </div>
-            <?php endif; ?>
-            <!-- form edit -->
-            <form action="<?= url_to('edit'); ?>" method="post" class="flex flex-col gap-4">
-                <input type="text" name="id" value="<?= $todo['id']; ?>" hidden>
-                <input type="text" name="title" class="input-form" placeholder="title" value="<?= $todo['title']; ?>">
-                <textarea name="todo" class="input-form h-24"><?= $todo['todo']; ?></textarea>
-                <button class="primary-btn">Save</button>
-
-            </form>
-            <!-- close btn -->
-            <button id="close-edittodo" class="absolute -top-3 -right-3 - p-1 rounded-full bg-accent">
-                <img src="<?= base_url('asset/x.svg'); ?>" alt="close add" class="w-5">
-            </button>
-        </div>
-
-
-    </div>
 
     <!-- alert delete -->
     <div id="alert-delete" class="alert-bg hidden">
         <div class="alert">
-            <p class="alert-title">Are you sure delete todo ?</p>
+            <p class="alert-title">Are you sure Permanent delete todo ?</p>
             <div class="flex gap-4 justify-evenly">
                 <button id="delete-no" class="secondary-btn">No</button>
-                <form action="<?= url_to('delete'); ?>" method="post">
-                    <input type="text" name="todoId" value="<?= $todo['id']; ?> " hidden>
+                <form action="<?= url_to('permanentdeleteone'); ?>" method="post">
+                    <input type="text" name="id" value="<?= $todo['id']; ?> " hidden>
                     <button class="primary-btn" value="">Yes</button>
                 </form>
             </div>
         </div>
 
+    </div>
+
+    <!-- alert restore -->
+
+    <div id="alert-restore" class="hidden alert-bg">
+        <div class="alert ">
+            <p class="alert-title">Restore selected Todo ? </p>
+
+            <div class="flex gap-4 justify-evenly mt-4">
+                <button id="restore-no" class="secondary-btn">No</button>
+
+                <form action="<?= url_to('restore/trash'); ?>" method="post">
+                    <input type="text" name="id" value="<?= $todo['id']; ?>" hidden>
+                    <button id="restore-yes" class="primary-btn">Yes</button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <!-- message -->
@@ -92,22 +82,11 @@
 </div>
 
 <script>
-    const triggerEdit = document.querySelector('#trigger-edit');
-    const alertEdit = document.querySelector('#alert-edit');
-    const closeEdit = document.querySelector('#close-edittodo');
-
     const triggerDelete = document.querySelector('#trigger-delete');
     const alertDelete = document.querySelector('#alert-delete');
     const closeDelete = document.querySelector('#delete-no');
 
-    triggerEdit.addEventListener('click', e => {
-        alertEdit.classList.remove('hidden');
-        alertEdit.style.transform = 'scale(1)';
-    });
 
-    closeEdit.addEventListener('click', () => {
-        alertEdit.style.transform = 'scale(0)'
-    })
 
     // delete logic
     triggerDelete.addEventListener('click', e => {
@@ -119,6 +98,25 @@
         e.preventDefault();
         alertDelete.style.transform = 'scale(0)'
     })
+
+    // restore todo
+
+    const triggerRestore = document.querySelector('#trigger-restore');
+    const restoreNo = document.querySelector('#restoreNo');
+    const alertRestore = document.querySelector('#alert-restore')
+
+
+    triggerRestore.addEventListener('click', e => {
+        e.preventDefault();
+        console.log('df');
+        alertRestore.classList.remove('hidden');
+        alertRestore.style.transform = 'scale(1)'
+    });
+
+    restoreNo.addEventListener('click', () => {
+        alertRestore.style.transform = 'scale(0)';
+    })
+
 
     // message 
 

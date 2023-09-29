@@ -20,4 +20,14 @@ class PermanentDelete extends BaseController
             return redirect()->back()->with('message', 'Succesful Delete Todo');
         }
     }
+
+    public function permanentOne()
+    {
+        $post = $this->request->getPost();
+        $todoModel = new Todo();
+
+        if ($todoModel->delete($post['id'])) {
+            return redirect()->route('trash')->with('message', 'Succesful Permanent Delete todo');
+        }
+    }
 }

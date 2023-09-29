@@ -23,4 +23,19 @@ class Restoretodo extends BaseController
             return redirect()->back()->with('message', 'Succesful Restore Todo');
         }
     }
+
+    public function restoreOne()
+    {
+        $post = $this->request->getPost();
+        $todoModel = new Todo();
+
+        $data = [
+            'id' => $post['id'],
+            'inTrash' => 'no'
+        ];
+
+        if ($todoModel->save($data)) {
+            return redirect()->route('trash')->with('message', 'succesful restore todo');
+        }
+    }
 }

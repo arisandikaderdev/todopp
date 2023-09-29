@@ -48,7 +48,7 @@
     <?php if (!$todos) : ?>
         <!-- empty todo -->
         <div class="h-[80vh] flex justify-center items-center">
-            <p class="text-base md:text-lg text-secondary font-semibold">You dont have todo !</p>
+            <p class="text-base md:text-lg text-secondary font-semibold">You dont have trash !</p>
         </div>
 
     <?php else : ?>
@@ -58,7 +58,7 @@
 
             <?php foreach ($todos as $todo) : ?>
                 <div class="todo ">
-                    <a href="">
+                    <a href="<?= base_url('todo/trash/') . $todo['id']; ?>">
                         <h3 class="todo-title"><?= $todo['title']; ?></h3>
                         <p id='todo-body' class="todo-body"><?= $todo['todo']; ?> </p>
                     </a>

@@ -54,7 +54,7 @@
         <div class=" grid grid-cols-2  justify-evenly  gap-4 my-4">
             <?php foreach ($todos as $todo) : ?>
                 <div class="todo ">
-                    <a href="">
+                    <a href="<?= base_url('todo/') . $todo['id']; ?>">
                         <h3 class="todo-title"><?= $todo['title']; ?></h3>
                         <p id='todo-body' class="todo-body"><?= $todo['todo']; ?></p>
                     </a>
