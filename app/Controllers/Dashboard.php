@@ -13,7 +13,7 @@ class Dashboard extends BaseController
         if ($this->request->is('get')) {
             $todoModel = new Todo();
 
-            $todo = $todoModel->where('id_user', user_id())->find();
+            $todo = $todoModel->where('id_user', user_id())->where('inTrash', 'no')->find();
             $user = user()->toRawArray();
             $data = [
                 'user' => $user,
@@ -22,8 +22,7 @@ class Dashboard extends BaseController
             return view('pages/dashboard', $data);
         }
 
-        $post = $this->request->getPost(['title', 'todo']);
-        // dd($post);
+        $post = $this->request->getPost();
 
         $rules = [
             'title' => 'required|min_length[3]',
@@ -44,7 +43,8 @@ class Dashboard extends BaseController
         ];
 
         if ($todoModel->save($todo)) {
-            return redirect()->back()->with('message', 'succes add new todo ');
+            session()->setFlashdata('addtodo', 'open');
+            return redirect()->back()->with('message', 'Succes Add Todo');
         }
     }
 }

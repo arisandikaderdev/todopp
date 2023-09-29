@@ -45,143 +45,30 @@
 
 
 
-    <!-- empty todo -->
-    <!-- <div class="h-[80vh] flex justify-center items-center">
-        <p class="text-base md:text-lg text-secondary font-semibold">You dont have todo !</p>
-    </div> -->
-
-    <!-- todo -->
-    <div class=" grid grid-cols-2  justify-evenly  gap-4 my-4">
-
-        <div class="todo ">
-            <a href="">
-                <h3 class="todo-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                <p id='todo-body' class="todo-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur optio recusandae Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga perferendis deleniti, alias cum debitis nisi distinctio voluptatibus beatae quis incidunt. Eius quis sed dolorem ipsam omnis, non rerum quibusdam dolore. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, tempora sed, expedita nesciunt ut sequi, praesentium aut tempore pariatur veritatis id distinctio itaque nihil ad nisi nemo quae ea repellendus! </p>
-            </a>
-
-            <input type="checkbox" form="selectForm" name="todo" class="todo-select hidden">
-
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                <p id='todo-body' class="todo-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur optio recusandae </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-                <p class="todo-body">
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
-        </div>
-        <div class="todo">
-            <a href="">
-                <h3 class="todo-title"></h3>
-                <p class="todo-body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dolor maxime et sunt? Alias distinctio repellendus ipsum quis et illum enim eum obcaecati facilis adipisci, sed magni ipsa tenetur consequatur!
-                </p>
-
-            </a>
-            <input type="checkbox" name="todo" class="todo-select hidden">
+    <?php if (!$todos) : ?>
+        <!-- empty todo -->
+        <div class="h-[80vh] flex justify-center items-center">
+            <p class="text-base md:text-lg text-secondary font-semibold">You dont have todo !</p>
         </div>
 
-    </div>
+    <?php else : ?>
 
+        <!-- todo -->
+        <div class=" grid grid-cols-2  justify-evenly  gap-4 my-4">
+
+            <?php foreach ($todos as $todo) : ?>
+                <div class="todo ">
+                    <a href="">
+                        <h3 class="todo-title"><?= $todo['title']; ?></h3>
+                        <p id='todo-body' class="todo-body"><?= $todo['todo']; ?> </p>
+                    </a>
+
+                    <input type="checkbox" name="<?= $todo['id']; ?>" class="todo-select hidden">
+
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
 
 
     <!-- alert delete -->
@@ -203,7 +90,7 @@
 
             <div class="flex gap-4 justify-evenly mt-4">
                 <button id="restore-no" class="secondary-btn">No</button>
-                <button class="primary-btn">Yes</button>
+                <button id="restore-yes" class="primary-btn">Yes</button>
             </div>
         </div>
     </div>
@@ -212,6 +99,13 @@
     <form action="<?= base_url('permanentdelete'); ?>" method="post" id="selectForm"></form>
     <form action="<?= base_url('restore');  ?>" method="post" id="restoreForm"></form>
 
+    <!-- message -->
+    <?php if (session('message')) : ?>
+        <div id="message" class=" bg-accent text-white px-3 py-2 fixed top-1 right-1 animate-slide-down transition-all duration-300 font-semibold">
+            <p><?= session('message') ?></p>
+            <div class="h-1 w-full  bg-white absolute left-0 bottom-0 animate-load origin-left"></div>
+        </div>
+    <?php endif; ?>
 </div>
 
 
@@ -318,6 +212,52 @@
     restoreNo.addEventListener('click', () => {
         alertRestore.style.transform = 'scale(0)';
     })
+
+    // trash
+
+    const trashYes = document.querySelector('#trash-yes');
+    const selectForm = document.querySelector('#selectForm');
+
+    trashYes.addEventListener('click', e => {
+        e.preventDefault();
+        console.log('okk')
+        for (const check of todosCheck) {
+            check.setAttribute('form', 'selectForm');
+        }
+        selectForm.submit();
+    })
+
+    // restore
+
+    const restoreYes = document.querySelector('#restore-yes');
+    const restoreForm = document.querySelector('#restoreForm');
+
+    restoreYes.addEventListener('click', e => {
+        e.preventDefault();
+        for (const check of todosCheck) {
+            check.setAttribute('form', 'restoreForm');
+        }
+        restoreForm.submit();
+    })
+
+
+
+
+
+
+    // message 
+
+    const message = document.querySelector('#message') ?? false;
+
+    message ? countDown(message) : '';
+
+    function countDown(message) {
+        setTimeout(() => {
+            // message.style.transform = 'translateY(-2rem)';
+            message.classList.add('hidden');
+        }, 2000);
+
+    }
 </script>
 
 <?= $this->endSection(); ?>

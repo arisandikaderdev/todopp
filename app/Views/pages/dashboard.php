@@ -28,13 +28,13 @@
 <div class="relative">
     <!-- option -->
     <div class="flex gap-3 justify-end">
-        <button form="selectForm" type="submit">
+        <button form="selectForm" type="submit" name="form" value="deleteTodo">
             <img id="trash" src="<?= base_url('asset/trash.svg'); ?>" alt="trash" class="w-6 hidden">
         </button>
 
 
         <label for="select-all">
-            <input type="checkbox" name="select-ala" id="select-all" class="w-6 accent-accent indeterminate:accent-accent">
+            <input type="checkbox" name="select-all" id="select-all" class="w-6 accent-accent indeterminate:accent-accent">
             <span class="text-sm font-semibold text-secondary">Check all</span>
         </label>
     </div>
@@ -60,7 +60,7 @@
                     </a>
 
 
-                    <input type="checkbox" form="selectForm" name="todo" class="todo-select hidden">
+                    <input type="checkbox" form="selectForm" name="<?= $todo['id']; ?>" class="todo-select hidden">
 
                 </div>
             <?php endforeach; ?>
@@ -97,7 +97,7 @@
             <form action="<?= current_url(); ?>" method="post" id="addForm" class="flex flex-col gap-4">
                 <input type="text" name="title" placeholder="Title ..." class="input-form">
                 <textarea name="todo" class="input-form h-48"></textarea>
-                <button type="submit" class="primary-btn">Save</button>
+                <input type="submit" class="primary-btn" name="form" value="addTodo">
             </form>
 
         </div>
@@ -115,7 +115,15 @@
     </div>
 
     <!-- forms -->
-    <form action="<?= base_url('delete'); ?>" method="post" id="selectForm"></form>
+    <form action="<?= url_to('delete'); ?>" method="post" id="selectForm"></form>
+
+    <!-- message -->
+    <?php if (session('message')) : ?>
+        <div id="message" class=" bg-accent text-white px-3 py-2 fixed top-1 right-1 animate-slide-down transition-all duration-300 font-semibold">
+            <p><?= session('message') ?></p>
+            <div class="h-1 w-full  bg-white absolute left-0 bottom-0 animate-load origin-left"></div>
+        </div>
+    <?php endif; ?>
 </div>
 
 
@@ -137,6 +145,8 @@
     const addtodo = document.querySelector('#addtodo');
     const triggerAddTodo = document.querySelector('#trigger-addtodo');
     const closeAddtodo = document.querySelector('#close-addtodo');
+
+
 
 
 
@@ -218,6 +228,20 @@
     closeAddtodo.addEventListener('click', () => {
         addtodo.style.height = '0';
     })
+
+    // message 
+
+    const message = document.querySelector('#message') ?? false;
+
+    message ? countDown(message) : '';
+
+    function countDown(message) {
+        setTimeout(() => {
+            // message.style.transform = 'translateY(-2rem)';
+            message.classList.add('hidden');
+        }, 2000);
+
+    }
 </script>
 
 <?= $this->endSection(); ?>

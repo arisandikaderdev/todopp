@@ -24,12 +24,30 @@ module.exports = {
       },
       animation: {
         toggleTheme: "toggleTheme 2s ease-in-out infinite",
+        load: "load 2s .2s ease-in-out forwards",
+        "slide-down": "slide-down .6s ease-in-out forwards",
       },
       keyframes: {
         toggleTheme: {
           "0%": { transform: "rotate(0deg)" },
           "100%": {
             transform: "rotate(360deg) translateY(4rem)",
+          },
+        },
+        load: {
+          "0%": {
+            transform: "scaleX(1)",
+          },
+          "100%": {
+            transform: "scaleX(0)",
+          },
+        },
+        "slide-down": {
+          from: {
+            transform: "translateY(-2rem)",
+          },
+          to: {
+            transform: "translateY(0)",
           },
         },
       },
