@@ -8,6 +8,10 @@ class About extends BaseController
 {
     public function index()
     {
-        return view('pages/about');
+        $user = user()->toRawArray();
+        $data = [
+            'user' => $user,
+        ];
+        return view('pages/about', $data);
     }
 }

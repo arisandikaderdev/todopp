@@ -6,7 +6,7 @@
 
         <?= $this->renderSection('header'); ?>
 
-        <div class="flex gap-4">
+        <div class="flex gap-4 items-center">
             <!-- switchTheme -->
             <?= view_cell('SwitchThemeCell'); ?>
             <!-- account section -->
@@ -23,7 +23,7 @@
                             </div>
 
                             <button class="primary-btn">
-                                <a href="#profile">Edit</a>
+                                <a href="<?= url_to('editProfile'); ?>">Edit</a>
                             </button>
                         </div>
                         <ul class="flex flex-col gap-4 text-dark-secondary font-semibold mt-6">

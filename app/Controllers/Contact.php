@@ -8,6 +8,10 @@ class Contact extends BaseController
 {
     public function index()
     {
-        return view('pages/contact');
+        $user = user()->toRawArray();
+        $data = [
+            'user' => $user,
+        ];
+        return view('pages/contact', $data);
     }
 }

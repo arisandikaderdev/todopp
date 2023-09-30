@@ -59,7 +59,7 @@
 
     <div id="alert-restore" class="hidden alert-bg">
         <div class="alert ">
-            <p class="alert-title">Restore selected Todo ? </p>
+            <p class="alert-title">Restore Todo ? </p>
 
             <div class="flex gap-4 justify-evenly mt-4">
                 <button id="restore-no" class="secondary-btn">No</button>

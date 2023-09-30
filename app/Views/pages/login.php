@@ -38,4 +38,28 @@
     <p><a href="<?= base_url('singup'); ?>" class="hover:text-dark-secondary">Create Account </a></p>
     <p><a href="<?= base_url('forgotpassword'); ?>" class="hover:text-dark-secondary">Forgot Password</a></p>
 </form>
+
+<!-- message -->
+<?php if (session('message')) : ?>
+    <div id="message" class=" bg-accent text-white px-3 py-2 fixed top-1 right-1 animate-slide-down transition-all duration-300 font-semibold">
+        <p><?= session('message') ?></p>
+        <div class="h-1 w-full  bg-white absolute left-0 bottom-0 animate-load origin-left"></div>
+    </div>
+<?php endif; ?>
+
+<script>
+    // message 
+
+    const message = document.querySelector('#message') ?? false;
+
+    message ? countDown(message) : '';
+
+    function countDown(message) {
+        setTimeout(() => {
+            // message.style.transform = 'translateY(-2rem)';
+            message.classList.add('hidden');
+        }, 2000);
+
+    }
+</script>
 <?= $this->endSection(); ?>
