@@ -96,7 +96,7 @@ _modules/*
 .php-version
 
 # Jetbrains editors (PHPStorm, etc)
-.idea/
+.idea/ 
 *.iml
 
 # Netbeans
@@ -124,4 +124,8 @@ nb-configuration.xml
 /results/
 /phpunit*.xml
 /.phpunit.*.cache
+
+# tailwindcss.exe
+
+/tailwindcss.exe
 
